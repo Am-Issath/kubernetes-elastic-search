@@ -78,5 +78,3 @@ Feel free to contribute by opening issues for suggestions or improvements. You c
 
 This project is licensed under the MIT License.
 
-
-**Remember to replace `your-username` with your actual GitHub username.**
