@@ -28,7 +28,7 @@ This repository contains manifests and Helm charts for deploying Elasticsearch a
    cd kubernetes-elastic-search
    
 
-2. Follow the instructions in the `Tasks.md` file to deploy Elasticsearch and Kibana.
+2. Follow the instructions in the [`Tasks.md`](Tasks.md) file to deploy Elasticsearch and Kibana.
 
 ## Manifests and Helm Charts
 
@@ -38,11 +38,11 @@ This repository contains manifests and Helm charts for deploying Elasticsearch a
 
 ## Configuration
 
-Customize your deployment by modifying configuration files. Check the `Configuration.md` file for details.
+Customize your deployment by modifying configuration files. Check the [`Configuration.md`](Configuration.md) file for details.
 
 ## Automated Backups
 
-Configuring automated backups for Elasticsearch involves creating snapshot repositories and policies. Refer to `AutomatedBackups.md` for detailed instructions.
+Configuring automated backups for Elasticsearch involves creating snapshot repositories and policies. Refer to [`AutomatedBackups.md`](AutomatedBackups.md) for detailed instructions.
 
 ## Using Helm
 
