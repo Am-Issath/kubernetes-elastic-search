@@ -1,0 +1,70 @@
+install minikube:
+# curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+# sudo install minikube-linux-amd64 /usr/local/bin/minikube
+# rm minikube-linux-amd64
+# minikube version
+
+2. kubectl installation:
+# sudo snap install kubectl --classic
+# kubectl version --client
+
+3. Install docker 
+# sudo apt install apt-transport-https ca-certificates curl software-properties-common
+# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+# echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+# sudo apt update
+# sudo apt install docker-ce docker-ce-cli containerd.io
+# sudo systemctl start docker
+# sudo usermod -aG docker $USER
+
+
+4. Minikube with Docker Driver 
+# Note: The Docker driver runs Minikube containers directly on your system without the need for a hypervisor.
+
+5. Manifest Files for Deploying Elasticsearch:
+   Create elasticsearch.yaml
+
+6. Manifest File for Kibana:
+   Create kibana.yaml 
+
+7. start minikube with docker drive  
+# minikube start --driver=docker
+
+8. Apply Manifests and Check Deployments:
+# kubectl apply -f elasticsearch.yaml
+# kubectl apply -f kibana.yaml
+
+9. Verify that the deployments are running:
+# kubectl get pods
+# kubectl get services
+
+10. Elastic Search File Repository with Automated Backups Policy
+    Create Repository Manifest (elasticsearch-repository.yaml):
+# kubectl apply -f elasticsearch-repository.yaml
+
+
+11. Install Helm using Script:
+# Download Helm installation script
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+
+# Make the script executable
+chmod +x get_helm.sh
+
+# Run the script to install Helm
+./get_helm.sh
+
+
+12. Creating Helm Chart for Elasticsearch:
+Create a Directory for Elasticsearch Helm Chart:
+# mkdir elasticsearch-chart
+# cd elasticsearch-chart
+
+Generate Helm Chart for Elasticsearch:
+# helm create elasticsearch
+
+
+
+
+
+
+

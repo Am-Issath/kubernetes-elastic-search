@@ -1,0 +1,38 @@
+apiVersion: elasticsearch.k8s.elastic.co/v1
+kind: Elasticsearch
+metadata:
+  name: elasticsearch
+spec:
+  version: 7.15.0
+  http:
+    service:
+      spec:
+        ports:
+          - name: http
+            port: 9200
+    tls:
+      selfSignedCertificate:
+        disabled: true
+  nodeSets:
+  - name: default
+    count: 3
+    config:
+      node.store.allow_mmap: false
+---
+apiVersion: kibana.k8s.elastic.co/v1
+kind: Kibana
+metadata:
+  name: kibana
+spec:
+  version: 7.15.0
+  http:
+    service:
+      spec:
+        ports:
+          - name: http
+            port: 5601
+    tls:
+      selfSignedCertificate:
+        disabled: true
+  count: 1
+
